@@ -8,7 +8,6 @@ function renderLogin() {
     return login;
 }
 
-
 function bannerElemento() {
     const divImg = document.createElement('div');
     divImg.className = "div-img";
@@ -61,7 +60,9 @@ function formularioElemento(){
     const betaButton = document.createElement('button');
     betaButton.type = 'button';
     betaButton.textContent = 'Probar beta';
-    betaButton.addEventListener('click', () => alert('Continuar sin registro'));
+    betaButton.addEventListener('click', () => {
+         window.location.href = 'components/worckPanel/worckPanel.html';
+    });
 
     // Crear botón de ingresar
     const submitButton = document.createElement('button');
@@ -69,6 +70,7 @@ function formularioElemento(){
 
     // Crear texto de "Crear Cuenta"
     const createAccountSpan = document.createElement('span');
+    createAccountSpan.className = "text-crear-cuenta"
     createAccountSpan.textContent = 'Crear Cuenta';
 
     // Agregar elementos al formulario
