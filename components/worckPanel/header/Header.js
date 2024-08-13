@@ -32,7 +32,7 @@ function header(){
     // USUARIO
     const div_perfil = document.createElement('div');
     div_perfil.className = "div-perfil";
-    div_perfil.innerText = "👨🏽";
+    div_perfil.innerText = "👦🏽";
 
     header.appendChild(menu);
     header.appendChild(div_buscador);
