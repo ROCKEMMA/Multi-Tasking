@@ -1,5 +1,4 @@
 const LOCAL_STORAGE_KEY_ASSIGNMENTS = 'lista_tareas';
-const LOCAL_STORAGE_KEY_USER = 'lista_asignaciones';
 
 function guardarAsignaciones(asignaciones) {
     localStorage.setItem(LOCAL_STORAGE_KEY_ASSIGNMENTS, JSON.stringify(asignaciones));
@@ -8,6 +7,5 @@ function guardarAsignaciones(asignaciones) {
 function obtenerAsignaciones() {
     return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_ASSIGNMENTS)) || [];
 }
-
 
 export {LOCAL_STORAGE_KEY_ASSIGNMENTS, guardarAsignaciones, obtenerAsignaciones};

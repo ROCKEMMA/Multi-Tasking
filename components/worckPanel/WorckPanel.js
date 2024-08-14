@@ -13,6 +13,3 @@ if (obtenerAsignaciones() == ""){
 }else {
     section_vista_app.appendChild(LayoutTareas(obtenerAsignaciones()));
 }
-
-
-

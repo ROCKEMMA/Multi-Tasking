@@ -1,3 +1,4 @@
+import { nuevaTarea } from "../formulario_nueva_tarea/NuevaTarea.js";
 
 function header(){
     const header = document.createElement('div');
@@ -28,6 +29,9 @@ function header(){
     const div_nuevo_item = document.createElement('div');
     div_nuevo_item.className = "div-nuevo-item";
     div_nuevo_item.innerText = "➕";
+    div_nuevo_item.addEventListener('click',()=>{
+        nuevaTarea();
+    });
 
     // USUARIO
     const div_perfil = document.createElement('div');
