@@ -1,13 +1,35 @@
+function encabezado(){
+    const div_campos = document.createElement('div');
+    div_campos.className = "campos";
+    div_campos.innerHTML = '<p>Nombre de la tarea</p> <p>Asignacido</p> <p>Entrega</p> <p>Estado</p>';
+    
+    return div_campos;
+
+}
+
+function LayoutTareasVacio(){
+    let div = document.createElement('div');
+    div.className = "layout-tareas-vacio";
+    div.appendChild(encabezado());
+
+    const div_mensaje = document.createElement('div');
+    div_mensaje.className = "div-mensaje";
+    const mensaje = document.createElement('h2');
+    mensaje.innerText = "Crea y asigna tareas";
+    div_mensaje.appendChild(mensaje);
+
+    div.appendChild(div_mensaje);
+
+    return div;
+}
+
+
 function LayoutTareas(tareas) {
     const div = document.createElement('div');
     div.classList.add('tareas-container');
 
-    const div_campos = document.createElement('div');
-    div_campos.className = "campos";
-    div_campos.innerHTML = '<p>Nombre de la tarea</p> <p>Asignacido</p> <p>Entrega</p> <p>Estado</p>';
-    div.appendChild(div_campos);
+    div.appendChild(encabezado());
 
-    // Crear un elemento para cada tarea
     tareas.forEach(tarea => {
         const tareaDiv = document.createElement('div');
         tareaDiv.classList.add('tarea-item');
@@ -39,4 +61,6 @@ function LayoutTareas(tareas) {
     return div;
 }
 
-export { LayoutTareas };
+
+
+export { LayoutTareas, LayoutTareasVacio };
