@@ -1,0 +1,71 @@
+#form-container {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: #fff; */
+}
+
+form {
+    width: 50rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input,
+form select {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+form .btn-nueva-tarea {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form .btn-nueva-tarea:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+form .btn-nueva-tarea:active {
+    transform: translateY(0);
+}
+
+form .btn-nueva-tarea:focus {
+    outline: none;
+}

@@ -4,31 +4,16 @@ function encabezado(){
     div_campos.innerHTML = '<p>Nombre de la tarea</p> <p>Asignacido</p> <p>Entrega</p> <p>Estado</p>';
     
     return div_campos;
-
 }
 
-function LayoutTareasVacio(){
-    let div = document.createElement('div');
-    div.className = "layout-tareas-vacio";
-    div.appendChild(encabezado());
+function LayoutTareas(dataTareas) {
 
-    const div_mensaje = document.createElement('div');
-    div_mensaje.className = "div-mensaje";
-    const mensaje = document.createElement('h2');
-    mensaje.innerText = "Crea y asigna tareas";
-    div_mensaje.appendChild(mensaje);
-
-    div.appendChild(div_mensaje);
-
-    return div;
-}
-
-
-function LayoutTareas(tareas) {
     const div = document.createElement('div');
-    div.classList.add('tareas-container');
-
+    div.className = 'tareas-container';
     div.appendChild(encabezado());
+    
+    let tareas = dataTareas;
+    //console.log(tareas);
 
     tareas.forEach(tarea => {
         const tareaDiv = document.createElement('div');
@@ -43,7 +28,7 @@ function LayoutTareas(tareas) {
         tareaDiv.appendChild(descripcionP);
 
         const personasP = document.createElement('p');
-        personasP.textContent = `${tarea.personasAsignadas.join(', ')}`;
+        personasP.textContent = `${tarea.personasAsignadas}`;
         tareaDiv.appendChild(personasP);
 
         const fechaP = document.createElement('p');
@@ -63,4 +48,4 @@ function LayoutTareas(tareas) {
 
 
 
-export { LayoutTareas, LayoutTareasVacio };
+export { LayoutTareas };

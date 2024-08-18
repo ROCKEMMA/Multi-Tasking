@@ -25,12 +25,12 @@ function header(){
     div_buscador.placeholder = "Buscar tarea"
     div_buscador.className = "div-buscador";
 
-    // NUEVO ITEM
+    // BOTÓN NUEVA TAREA
     const div_nuevo_item = document.createElement('div');
     div_nuevo_item.className = "div-nuevo-item";
     div_nuevo_item.innerText = "➕";
     div_nuevo_item.addEventListener('click',()=>{
-        nuevaTarea();
+        document.getElementById('vista-app').appendChild(nuevaTarea());
     });
 
     // USUARIO
