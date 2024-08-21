@@ -13,7 +13,6 @@ function LayoutTareas(dataTareas) {
     div.appendChild(encabezado());
     
     let tareas = dataTareas;
-    //console.log(tareas);
 
     tareas.forEach(tarea => {
         const tareaDiv = document.createElement('div');

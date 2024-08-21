@@ -76,7 +76,7 @@ function nuevaTarea() {
 
     // Manejar el envío del formulario
     form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Evita la recarga de la página
+        //event.preventDefault(); // Evita la recarga de la página
 
         let dato = {
             nombre: nombreTareaInput.value,
@@ -87,7 +87,6 @@ function nuevaTarea() {
 
         let dataTareas = obtenerAsignaciones();
         dataTareas.push(dato);
-        alert(JSON.stringify(dataTareas, null, 2)); // Muestra los datos en formato JSON
 
         guardarAsignaciones(dataTareas);
 

@@ -31,6 +31,32 @@ function header(){
     div_nuevo_item.innerText = "➕";
     div_nuevo_item.addEventListener('click',()=>{
         document.getElementById('vista-app').appendChild(nuevaTarea());
+            // Establecer el foco en el campo nombreTareaInput
+            document.getElementById('nombre-tarea').focus();
+
+            // Función para recargar la página
+            function recargarPagina() {
+                location.reload(true);
+            }
+
+            // Manejador de eventos para detectar la tecla "Esc"
+            document.addEventListener('keydown', function(event) {
+                // Verifica si la tecla presionada es "Esc" (código de tecla 27)
+                if (event.key === 'Escape' || event.keyCode === 27) {
+                    recargarPagina();
+                }
+            });
+
+    });
+
+    // Acciones para el formulario
+    function clickButton() {
+        div_nuevo_item.click();
+    }
+
+    document.addEventListener('keydown', (event) => {
+        // Ctrl + B
+        event.ctrlKey && event.key === 'b' && clickButton();
     });
 
     // USUARIO
