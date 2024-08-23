@@ -1,5 +1,4 @@
 import { guardarAsignaciones, obtenerAsignaciones } from "../../data/Storage.js";
-import { LayoutTareas } from "../layoutTareas/LayoutTareas.js";
 
 function nuevaTarea() {
     const div = document.createElement('div');

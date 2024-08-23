@@ -25,9 +25,6 @@ rootWork.appendChild(forNewElement);
 // CARGAR TAREAS
 if (obtenerAsignaciones().length === 0){
     workElement.appendChild(LayoutTareasVacio());
-    console.log("vacio",obtenerAsignaciones().length);
-}else {    
-    console.log("cargado", obtenerAsignaciones().lengths);
-    
+}else { 
     workElement.appendChild(LayoutTareas(obtenerAsignaciones()));
 }

@@ -1,14 +1,21 @@
+import { nuevaTarea } from "../formulario_nueva_tarea/NuevaTarea.js";
+
 function LayoutTareasVacio(){
     let div = document.createElement('div');
     div.className = "layout-tareas-vacio";
 
-    const div_mensaje = document.createElement('div');
-    div_mensaje.className = "div-mensaje";
-    const mensaje = document.createElement('h2');
-    mensaje.innerText = "Crea y asigna tareas";
-    div_mensaje.appendChild(mensaje);
+    let mensaje = document.createElement('h2');
+    mensaje.innerText = "Crea y Asigna Tareas";
+    div.appendChild(mensaje);
 
-    div.appendChild(div_mensaje);
+    let btnNuevaTarea = document.createElement('div');
+    btnNuevaTarea.className = "btn-nueva-tarea";
+    btnNuevaTarea.innerText = "Nueva Asignación";
+    btnNuevaTarea.addEventListener('click',()=>{
+        document.querySelector(".layout-tareas-vacio").appendChild(nuevaTarea());
+        document.getElementById('nombre-tarea').focus();
+    });
+    div.appendChild(btnNuevaTarea);
 
     return div;
 }
