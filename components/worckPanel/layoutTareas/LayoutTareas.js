@@ -19,7 +19,7 @@ function LayoutTareas(dataTareas) {
         tareaDiv.classList.add('tarea-item');
 
         const numeroP = document.createElement('p');
-        numeroP.textContent = `☑️ ${tarea.numero}`;
+        numeroP.textContent = `☑️`;
         tareaDiv.appendChild(numeroP);
 
         const descripcionP = document.createElement('p');

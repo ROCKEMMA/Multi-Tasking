@@ -49,7 +49,7 @@ function nuevaTarea() {
     estadoSelect.setAttribute('id', 'estado');
     estadoSelect.setAttribute('name', 'estado');
 
-    const opcionesEstado = ['Sin asignar', 'Asignado', 'Completado', 'No completado'];
+    const opcionesEstado = ['Sin asignar', 'Asignado', 'Completado'];
     opcionesEstado.forEach(opcion => {
         const option = document.createElement('option');
         option.setAttribute('value', opcion);
@@ -79,9 +79,9 @@ function nuevaTarea() {
         //event.preventDefault(); // Evita la recarga de la página
 
         let dato = {
-            nombre: nombreTareaInput.value,
-            personaAsignada: asignadoSelect.value,
-            fechaEntrega: fechaEntregaInput.value,
+            descripcion: nombreTareaInput.value,
+            personasAsignadas: asignadoSelect.value,
+            fechaLimite: fechaEntregaInput.value,
             estado: estadoSelect.value
         };
 
@@ -89,8 +89,6 @@ function nuevaTarea() {
         dataTareas.push(dato);
 
         guardarAsignaciones(dataTareas);
-
-        LayoutTareas(dataTareas);
 
         // Opcional: Limpiar los campos del formulario después de enviar
         nombreTareaInput.value = '';
