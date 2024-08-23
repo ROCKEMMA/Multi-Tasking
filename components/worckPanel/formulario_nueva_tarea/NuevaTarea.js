@@ -24,7 +24,7 @@ function nuevaTarea() {
     asignadoSelect.setAttribute('id', 'asignado');
     asignadoSelect.setAttribute('name', 'asignado');
 
-    const opcionesAsignado = ['Juan Pérez', 'María López', 'Ana Gómez'];
+    const opcionesAsignado = ['--------','Juan Pérez', 'María López', 'Ana Gómez'];
     opcionesAsignado.forEach(opcion => {
         const option = document.createElement('option');
         option.setAttribute('value', opcion);
@@ -41,21 +41,6 @@ function nuevaTarea() {
     fechaEntregaInput.setAttribute('id', 'fecha-entrega');
     fechaEntregaInput.setAttribute('name', 'fecha-entrega');
 
-    // Campo estado
-    const estadoLabel = document.createElement('label');
-    estadoLabel.setAttribute('for', 'estado');
-    estadoLabel.textContent = 'Estado: ';
-    const estadoSelect = document.createElement('select');
-    estadoSelect.setAttribute('id', 'estado');
-    estadoSelect.setAttribute('name', 'estado');
-
-    const opcionesEstado = ['Sin asignar', 'Asignado', 'Completado'];
-    opcionesEstado.forEach(opcion => {
-        const option = document.createElement('option');
-        option.setAttribute('value', opcion);
-        option.textContent = opcion;
-        estadoSelect.appendChild(option);
-    });
 
     // BOTÓN CREAR ASIGNACIÓN
     const submitButton = document.createElement('button');
@@ -70,8 +55,6 @@ function nuevaTarea() {
     form.appendChild(asignadoSelect);
     form.appendChild(fechaEntregaLabel);
     form.appendChild(fechaEntregaInput);
-    form.appendChild(estadoLabel);
-    form.appendChild(estadoSelect);
     form.appendChild(submitButton);
 
     // Manejar el envío del formulario
@@ -82,7 +65,7 @@ function nuevaTarea() {
             descripcion: nombreTareaInput.value,
             personasAsignadas: asignadoSelect.value,
             fechaLimite: fechaEntregaInput.value,
-            estado: estadoSelect.value
+            estado: asignadoSelect.value === '--------' ? "Sin asignar" : "Asignado"
         };
 
         let dataTareas = obtenerAsignaciones();
@@ -94,7 +77,6 @@ function nuevaTarea() {
         nombreTareaInput.value = '';
         asignadoSelect.value = '';
         fechaEntregaInput.value = '';
-        estadoSelect.value = '';
     });
 
     div.appendChild(form);

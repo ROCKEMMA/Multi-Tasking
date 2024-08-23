@@ -14,16 +14,12 @@ function LayoutTareas(dataTareas) {
     
     let tareas = dataTareas;
 
-    tareas.forEach(tarea => {
+    tareas.forEach((tarea, index) => {
         const tareaDiv = document.createElement('div');
         tareaDiv.classList.add('tarea-item');
 
-        const numeroP = document.createElement('p');
-        numeroP.textContent = `☑️`;
-        tareaDiv.appendChild(numeroP);
-
         const descripcionP = document.createElement('p');
-        descripcionP.textContent = `${tarea.descripcion}`;
+        descripcionP.textContent = `${index+1} ${tarea.descripcion}`;
         tareaDiv.appendChild(descripcionP);
 
         const personasP = document.createElement('p');
@@ -35,16 +31,31 @@ function LayoutTareas(dataTareas) {
         tareaDiv.appendChild(fechaP);
 
         const estadoP = document.createElement('p');
-        estadoP.className = "estado";
         estadoP.textContent = `${tarea.estado}`;
+        estadoP.className = `estado ${colorEstado(tarea.estado)}`;
         tareaDiv.appendChild(estadoP);
 
         div.appendChild(tareaDiv);
     });
 
+    
     return div;
 }
 
+function colorEstado(estaoInicial){
+
+    if (estaoInicial == "Sin asignar"){
+        return estaoInicial;
+    }else if(estaoInicial == "Presentado"){
+
+    }else if(estaoInicial == "Presentado con retraso"){
+
+    }else if(estaoInicial == "En verificación"){
+
+    }else {
+        return "color_asignado";
+    }
+}
 
 
 export { LayoutTareas };

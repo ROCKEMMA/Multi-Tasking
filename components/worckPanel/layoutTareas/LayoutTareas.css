@@ -13,6 +13,8 @@
 .campos {
     flex: 1;
     font-size: 1.5rem;
+    padding: 0.5rem 1.6rem;
+    font-weight: 600;
 
     display: grid;
     grid-template-columns:  1fr 15rem 12rem 12rem;
@@ -30,19 +32,46 @@
 
 
     display: grid;
-    grid-template-columns: auto 1fr 15rem 12rem 12rem;
+    grid-template-columns: 1fr 15rem 12rem 12rem;
     gap: 8px;
+}
+.tarea-item p {
+    display: flex;
+    align-items: center;
 }
 .tarea-item:hover {
     background-color: gainsboro;
 }
 
 .estado {
-    background-color: rgb(255, 183, 49);
-    border-radius: 0.5rem;
+    background-color: #d3d3d3;
+    color: black;
+    border-radius: 3px;
     text-align: center;
-    padding: 0.2rem;
+    
+    display: flex;
+    justify-content: center;
+    padding: 0.2rem 0;
 }
+
+.color_asignado {
+    background-color: #007bff;
+    color: white;
+}
+.color_Presentado {
+    background-color: #28a745;
+    color: white;
+}
+.color_Presentado-con-retraso {
+    background-color: #fd7e14;
+    color: white;
+}
+.color_En-verificacion {
+    background-color: #ffc107;
+    color: white;
+}
+
+
 .tarea-grid-item {
     padding: 4px;
     font-size: 14px;
